@@ -1,4 +1,7 @@
+# user_stats.py
+
 """
+Desiree Thompson - Module 2 - January 23, 2023
 
 This example illustrates basic analytics
 using just the built-in statistics module.
@@ -14,11 +17,13 @@ Uses only Python Standard Library module:
 
 - statistics - for basic descriptive and a bit of predictive stats
 
+
+
 """
 
 import statistics
 
-# define a variable with some univariant data 
+# define a variable with some univariant data
 # (one varabile, many readings)
 scores = [
     105,
@@ -77,4 +82,42 @@ scores = [
 # typically, x (or time) is independent and
 # y is dependent on x (e.g. temperature vs hour of day)
 x_times = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31,32]
+y_temps = [2, 5, 8, 20, 21, 23, 24, 27, 30, 31, 31, 32]
+
+# Descriptive: Averages and measures of central tendency
+
+mean = statistics.mean(scores)
+median = statistics.median(scores)
+mode = statistics.mode(scores)
+
+# Descriptive: Measures of spread
+variance = statistics.variance(scores)
+stdev = statistics.stdev(scores)
+
+# Predictive: Use of linear regerssion to predict future temperatures
+
+slope, intercept = statistics.linear_regression(x_times, y_temps)
+future_temperature = round(slope * 13 + intercept)
+
+
+
+print()
+print("Descriptive statistics for averages and measures of central tendency")
+print(f"    mean= {mean:.3f}")
+print(f"    median= {median:.3f}")
+print(f"    mode= {mode:.3f}")
+print()
+print("Descriptive statistics for measures of spread")
+print(f"    variance= {variance:.3f}")
+print(f"    stdev= {stdev:.3f}")
+print()
+print(f"Linear regression used to identify the slope of {slope:.5f} and the intercept of {intercept:.5f}")
+print()
+print(f"Future temperature at the next hour is predicted to be {future_temperature}.")
+print()
+
+
+
+
+
+

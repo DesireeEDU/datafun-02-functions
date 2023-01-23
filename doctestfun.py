@@ -5,10 +5,10 @@ It uses the simple doctest module to check the functions.
 
 In general, try to write functions that return a value (or values).
 
-If the fuction does something else (e.g. prints to the console),
+If the function does something else (e.g. prints to the console),
 it's called a 'side effect'.
 
-Writing functions is critical.
+Writing functions is critical. 
 Being able to write good, testable functions is very valuable skill.
 
 Uses:
@@ -37,6 +37,7 @@ Define unit tests:
 import doctest
 
 # define some custom functions
+
 
 def add_two(first, second):
     """Return the sum of any two arguments."""
